@@ -8,19 +8,28 @@ Write a C program to convert a 23.65 into 25 using pointer
 3.	Use the pointer to modify the value to 25.0.
 4.	Print the modified value.
 
-## PROGRAM:
+## PROGRAM
+```
+#include <stdio.h>
+
+int main() { float num = 23.65; float *ptr = #
+
+// Output original value
+printf("Original value: %.2f\n", num);
+
+// Modify value using pointer
+*ptr = 25;
+
+// Output modified value
+printf("Modified value: %.2f\n", num);
+
+return 0;
+}
+```
 
 ## OUTPUT:
  	
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/fa6fe4ff-0bf1-4858-9489-869a3198f9e6)
 
 
 ## RESULT:
@@ -45,15 +54,36 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+// Recursive function to calculate factorial
+long long int factorial(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 12;
+    long long int product;
+
+    product = factorial(num);
+
+    printf("Product of first 12 natural numbers (12!) is: %lld\n", product);
+
+    return 0;
+}
+```
 ## OUTPUT:
-         		
+![image](https://github.com/user-attachments/assets/c4a0dc71-760a-4f52-ba10-290d0e5d201a)
+   		
 ## RESULT:
 
 Thus the program has been executed successfully.
  
  
-
-
 # EX-23-ARRAYS AND ITS OPERATIONS
 
 ## AIM:
@@ -68,16 +98,46 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() { int rows, cols;
 
+// Input number of rows and columns
+printf("Enter number of rows: ");
+scanf("%d", &rows);
 
+printf("Enter number of columns: ");
+scanf("%d", &cols);
+
+int matrix[rows][cols];
+
+// Input elements of matrix
+printf("Enter elements of the matrix:\n");
+for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        scanf("%d", &matrix[i][j]);
+    }
+}
+
+// Calculating sum of each row
+for (int i = 0; i < rows; i++) {
+    int sum = 0;
+    for (int j = 0; j < cols; j++) {
+        sum += matrix[i][j];
+    }
+    printf("Sum of row %d = %d\n", i + 1, sum);
+}
+
+return 0;
+}
+
+```
 ## OUTPUT
-
-
- 
- 
+![image](https://github.com/user-attachments/assets/1f1c4837-d330-4f9d-9006-e8481b96797e)
 
  ## RESULT
+ Thus the program has been executed successfully.
  
 
 
@@ -96,9 +156,36 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+#include <string.h>
 
+int main() {
+    char str[100];
+    int rows;
+
+    // Input string
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Input number of rows
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    // Print the pyramid pattern
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("%s ", str);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
  ## OUTPUT
+![image](https://github.com/user-attachments/assets/f71e299b-bd58-4ae8-90d2-0ee4efb1a48b)
 
  
 
@@ -106,12 +193,6 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 
 Thus the C program to String process executed successfully
  
-
- 
-.
-
-
-
 # EX -25 –DISPLAYING ARRAYS USING POINTERS
 ## AIM
 
@@ -132,10 +213,34 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main() { int arr[6]; int *ptr;
+
+ptr = arr;  // Point to the beginning of the array
+
+// Reading array elements using pointer
+printf("Enter 6 integer elements:\n");
+for (int i = 0; i < 6; i++) {
+    scanf("%d", ptr + i);  // Equivalent to &arr[i]
+}
+
+// Displaying array elements using pointer
+printf("The elements of the array are:\n");
+for (int i = 0; i < 6; i++) {
+    printf("%d ", *(ptr + i));  // Equivalent to arr[i]
+}
+
+printf("\n");
+
+return 0;
+}
+```
 ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/6bf98e9f-ee5c-471c-816f-71afd5a1fc59)
+
 
 ## RESULT
 
